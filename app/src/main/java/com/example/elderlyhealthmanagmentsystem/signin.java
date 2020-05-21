@@ -58,7 +58,7 @@ public class signin extends AppCompatActivity {
             public void onClick(View v) {
                 if(_spnType.getSelectedItem().toString().equals("Therapist")) {
 
-                    Intent intent = new Intent(v.getContext(),TherapistActivity.class);
+                    Intent intent = new Intent(v.getContext(),Therapist.class);
                     startActivity(intent);
                 }else if(_spnType.getSelectedItem().toString().equals("Elderly"))
                 {

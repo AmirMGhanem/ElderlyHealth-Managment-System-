@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:context=".Therapist">
 
-    <include
-        layout="@layout/app_bar_therapist"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/therapist_nav"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:visibility="visible"
+        app:itemBackground="@color/bottom"
+        app:itemIconTint="@color/nav_item_colors"
+        app:itemTextColor="@color/nav_item_colors"
+        app:menu="@menu/menu">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <FrameLayout
+        android:id="@+id/therapist_frame"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_therapist"
-        app:menu="@menu/activity_therapist_drawer" />
+        android:layout_above="@id/therapist_nav"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
-</androidx.drawerlayout.widget.DrawerLayout>
+    </FrameLayout>
+</RelativeLayout>

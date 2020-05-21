@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/channelIcon"
+        android:icon="@drawable/group"
+        android:title="Channel" />
+
+    <item
+        android:id="@+id/EventsIcon"
+        android:icon="@drawable/event"
+        android:title="Events" />
+
+    <item
+        android:id="@+id/AccessibleIcon"
+        android:icon="@drawable/accessible"
+        android:title="Accesible" />
+
+    <item
+        android:id="@+id/HomeIcon"
+        android:icon="@drawable/home"
+        android:title="Home" />
+
+
+
+</menu>
