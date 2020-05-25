@@ -29,6 +29,12 @@ public class Therapist extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
+                    case R.id.HomeIcon:
+                        fragment = new TherapistHomeFragment();
+                        switchFragment(fragment);
+                        return true;
+
+
                     case R.id.channelIcon:
                         fragment = new TherapistGroupFragment();
                         switchFragment(fragment);
@@ -46,10 +52,6 @@ public class Therapist extends AppCompatActivity {
                         switchFragment(fragment);
                         return true;
 
-                    case R.id.HomeIcon:
-                        fragment = new TherapistHomeFragment();
-                        switchFragment(fragment);
-                        return true;
                 }
                 return false;
             }
