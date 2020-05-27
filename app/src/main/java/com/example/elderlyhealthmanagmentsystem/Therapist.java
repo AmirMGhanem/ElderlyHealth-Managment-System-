@@ -25,15 +25,16 @@ public class Therapist extends AppCompatActivity {
         mTherapistFrame=(FrameLayout) findViewById(R.id.therapist_frame);
         mTherapistNav=(BottomNavigationView) findViewById(R.id.therapist_nav);
 
+
         mTherapistNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
+
                     case R.id.HomeIcon:
                         fragment = new TherapistHomeFragment();
                         switchFragment(fragment);
                         return true;
-
 
                     case R.id.channelIcon:
                         fragment = new TherapistGroupFragment();
@@ -61,7 +62,12 @@ public class Therapist extends AppCompatActivity {
 
     private void switchFragment(Fragment fragment) {
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content, fragment);
+
+        if(getSupportFragmentManager().findFragmentById(R.id.therapist_frame)==null)
+            fragmentTransaction.add(R.id.therapist_frame,fragment);
+        else
+            fragmentTransaction.replace(R.id.therapist_frame,fragment);
+
         fragmentTransaction.commit();
     }
 }
